@@ -25,3 +25,4 @@ def hello():
 include::learning_notes.adoc[]
 include::learning_tuples.adoc[]
 include::learning_notes_sets.adoc[]
+include::learning_notes_string.adoc[]

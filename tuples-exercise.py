@@ -48,3 +48,7 @@ for students in nested_tuples:
     print(f"Subjects: {', '.join(subjects)}")
     print("-" * 20)
           
+
+
+my_tuple = (1, 2, 2, 3, 2,4,2,3,6,3,5,3,2,1,2,3,4,5,6,7,8,9,10)
+print(my_tuple.count(3))  # Output: 3
