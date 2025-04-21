@@ -1,0 +1,114 @@
+
+== Sets in Python
+
+=== Overview
+* Sets are a built-in data type in Python that allows you to store collections of unique items. They are similar to lists and dictionaries but have their own unique properties and methods. Sets are mutable, meaning you can add or remove elements after creation, but they do not support indexing or slicing like lists.
+* Sets are particularly useful when you need to perform operations that involve unique elements, such as checking for membership, eliminating duplicates, or performing mathematical set operations.
+* Sets are unordered collections of unique elements. They're useful when you want to store non-duplicate items and perform mathematical set operations like union, intersection, and difference.
+
+=== Key Points
+
+- Defined using `{}` or `set()` constructor.
+- Cannot contain duplicates.
+- Elements must be immutable (e.g., numbers, strings, tuples).
+- Sets are unordered, so they do not support indexing or slicing.
+
+=== Creating Sets
+
+[source,python]
+----
+# Using curly braces
+fruits = {"apple", "banana", "cherry"}
+
+# Using the set() constructor
+numbers = set([1, 2, 3, 2])
+print(numbers)  # Output: {1, 2, 3}
+----
+
+=== Set Operations
+
+[source,python]
+----
+set_a = {1, 2, 3, 4}
+set_b = {3, 4, 5, 6}
+
+# Union (all elements from both sets)
+print(set_a | set_b)  # {1, 2, 3, 4, 5, 6}
+
+# Intersection (common elements)
+print(set_a & set_b)  # {3, 4}
+
+# Difference (elements in set_a but not in set_b)
+print(set_a - set_b)  # {1, 2}
+
+# Symmetric Difference (elements in either set, but not both)
+print(set_a ^ set_b)  # {1, 2, 5, 6}
+----
+
+=== Set Methods
+
+[source,python]
+----
+# Add an element
+fruits.add("orange")
+
+# Remove an element (raises error if not found)
+fruits.remove("banana")
+
+# Remove an element safely
+fruits.discard("grape")
+
+# Check for membership
+if "apple" in fruits:
+    print("Apple is in the set")
+
+# Clear all elements
+fruits.clear()
+
+# Length of set
+print(len(fruits))
+----
+
+=== Checking Relationships
+
+[source,python]
+----
+a = {1, 2, 3}
+b = {2, 3}
+c = {4, 5}
+
+print(a.issubset(b))       # False
+print(b.issubset(a))       # True
+print(a.issuperset(b))     # True
+print(a.isdisjoint(c))     # True
+----
+
+=== Real-world Example: Event Participation
+
+[source,python]
+----
+sports_day = {"Alice", "Bob", "Charlie", "Diana"}
+science_fair = {"Bob", "Eve", "Frank", "Charlie"}
+art_competition = {"George", "Alice", "Frank", "Helen"}
+
+print("Students in all events:", sports_day & science_fair & art_competition)
+print("At least one event:", sports_day | science_fair | art_competition)
+print("Only in sports day:", sports_day - (science_fair | art_competition))
+
+combined_students = sports_day.union(science_fair, art_competition)
+print("All participants:", combined_students)
+
+if "Zara" in combined_students:
+    print("Zara is in the list.")
+else:
+    print("Zara is not in the list.")
+----
+
+=== Summary
+
+- Sets store unique, unordered values.
+- Great for eliminating duplicates and performing set math.
+- Do not support indexing.
+- Useful methods: `add()`, `remove()`, `discard()`, `clear()`, `union()`, `intersection()`, `difference()`, `symmetric_difference()`, `issubset()`, `issuperset()`, `isdisjoint()`.
+
+// File: python-poc/sets_compare_inbuilt.py

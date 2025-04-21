@@ -1,0 +1,27 @@
+= Python Learning Notes (Cheat Sheet Style)
+:author: Raghav
+:toc: left
+:toc-title: Table of Contents
+:toclevels: 2
+:sectnums:
+:doctype: book
+
+:source-highlighter: rouge
+:rouge-style: monokai
+:rouge-languages: python, bash, json, xml, html, css, javascript, ruby, go, java, csharp, php, sql
+:highlightjs-languages: python
+
+:sectnumlevels: 2
+
+== Introduction
+Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
+
+[source,python]
+----
+def hello():
+    print("Hello, world!")
+----
+
+include::learning_notes.adoc[]
+include::learning_tuples.adoc[]
+include::learning_notes_sets.adoc[]

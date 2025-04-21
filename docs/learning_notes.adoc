@@ -1,0 +1,160 @@
+== 📂 Variables, Data Types, and Input/Output
+
+=== Variables
+- Dynamically typed: no need to declare the type.
+[source,python]
+----
+name = "Alice"
+age = 25
+----
+
+=== Common Data Types
+- `int`, `float`, `str`, `bool`
+
+=== Input
+[source,python]
+----
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+----
+
+=== Output
+[source,python]
+----
+print("Hello,", name)
+print(f"You are {age} years old")
+----
+
+== ⚖️ Control Statements: `if`, `for`, `while`, `break`, `continue`
+
+=== if-else
+[source,python]
+----
+if age >= 18:
+    print("Adult")
+elif age > 12:
+    print("Teenager")
+else:
+    print("Child")
+----
+
+=== Loops
+
+==== for loop
+[source,python]
+----
+for i in range(5):
+    print(i)
+----
+
+==== while loop
+[source,python]
+----
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+----
+
+=== break and continue
+[source,python]
+----
+for i in range(10):
+    if i == 5:
+        break
+    if i % 2 == 0:
+        continue
+    print(i)
+----
+
+== 🔢 Functions
+
+=== Defining and Using Functions
+[source,python]
+----
+def greet(name):
+    return f"Hello, {name}!"
+
+message = greet("Alice")
+print(message)
+----
+
+=== Ternary Expression
+[source,python]
+----
+def check_even_odd(num):
+    return "Even" if num % 2 == 0 else "Odd"
+----
+
+== 📅 Lists
+
+=== Definition
+[source,python]
+----
+fruits = ["apple", "banana", "cherry"]
+----
+
+=== Indexing
+- Positive: `fruits[0]`
+- Negative: `fruits[-1]`
+
+=== Methods
+[source,python]
+----
+fruits.append("mango")
+fruits.remove("banana")
+last = fruits.pop()
+----
+
+=== List Comprehension
+[source,python]
+----
+squares = [x**2 for x in range(5)]
+----
+
+== 🔎 Dictionaries
+
+=== Definition and Access
+[source,python]
+----
+student = {"name": "Alice", "age": 22, "subjects": ["Math", "Science"]}
+print(student["name"])
+student["age"] = 23
+----
+
+=== Methods
+[source,python]
+----
+student.get("email", "Not Provided")
+student.update({"email": "alice@mail.com"})
+student.pop("age")
+----
+
+=== Nested Dictionary Example
+[source,python]
+----
+def create_student(id, name, age, subjects):
+    return {id: {"id": id, "name": name, "age": age, "subjects": subjects}}
+
+students = {}
+students[1] = create_student(1, "Alice", 22, ["Math", "Science"])[1]
+----
+
+== ✏️ Coding Standards & Best Practices
+
+- Use `snake_case` for function names (e.g., `calculate_total`)
+- Use meaningful and descriptive variable names
+- Comment for clarity
+- Define functions before using
+- Indent with 4 spaces
+- Avoid magic numbers; use named constants
+
+== 📚 Summary of What We've Learned
+
+- ✅ Variables, Data Types, Input/Output
+- ✅ if, for, while, break, continue
+- ✅ Functions (declaration, parameters, return values)
+- ✅ Lists (indexing, iteration, methods, comprehension)
+- ✅ Dictionaries (key-value, nested, methods)
+
+*Stay consistent, code clean, and understand the logic step-by-step.*

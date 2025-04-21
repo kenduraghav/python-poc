@@ -1,0 +1,132 @@
+
+== Tuples
+
+=== Overview
+
+A **tuple** is an ordered collection of elements, similar to a list but with one key difference: **tuples are immutable**. Once a tuple is created, its elements cannot be modified, added, or removed.
+
+=== Definition
+
+- Tuples are defined using **parentheses** `()`.
+- Tuples can store multiple elements of different data types such as integers, strings, or even other tuples.
+
+Example:
+
+[source, python]
+----
+students = (101, "John", 85.5)
+print(students)
+# Output: (101, "John", 85.5)
+----
+
+=== Accessing Elements
+
+You can access elements in a tuple using **indexing**.
+
+- **Positive indexing** starts at 0, moving left to right.
+- **Negative indexing** starts at -1, moving right to left (i.e., -1 for the last element).
+
+Example:
+
+[source, python]
+----
+students = (101, "John", 85.5)
+print(students[0])    # Output: 101
+print(students[-1])   # Output: 85.5
+----
+
+### Key Points to Remember:
+- **Indexing** in tuples works like in lists (0-based for positive and -1 for negative).
+- Tuples are **ordered** (the order of elements is maintained).
+
+=== Unpacking Tuples
+
+Unpacking allows you to assign the elements of a tuple directly to variables.
+
+Example:
+
+[source, python]
+----
+students = (101, "John", 85.5)
+id, name, score = students
+print(id)     # Output: 101
+print(name)   # Output: John
+print(score)  # Output: 85.5
+----
+
+In this case, the tuple `(101, "John", 85.5)` is unpacked into three variables: `id`, `name`, and `score`.
+
+### Key Points to Remember:
+- The number of variables on the left-hand side must match the number of elements in the tuple.
+
+=== Nested Tuples
+
+Tuples can also contain other tuples. This is known as **nested tuples**.
+
+Example:
+
+[source, python]
+----
+students = (
+    (101, "John", ("English", "Math", "Science")),
+    (102, "Jane", ("History", "Math", "Art")),
+    (103, "Dave", ("English", "History"))
+)
+print(students[0][2])   # Output: ('English', 'Math', 'Science')
+print(students[1][2][1])  # Output: Math
+----
+
+In the example above, `students` is a tuple that contains three elements, each of which is also a tuple. The third element in each student's tuple is another tuple of subjects.
+
+### Key Points to Remember:
+- **Nested tuples** are useful when you want to store structured data.
+- You can access nested elements using multiple indices.
+
+=== Operations on Tuples
+
+- **Concatenation**: You can combine two tuples using the `+` operator.
+- **Repetition**: You can repeat a tuple using the `*` operator.
+- **Membership test**: You can use the `in` keyword to check if an element exists in a tuple.
+
+Example:
+
+[source, python]
+----
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5)
+combined = tuple1 + tuple2
+print(combined)  # Output: (1, 2, 3, 4, 5)
+
+repeated = tuple1 * 2
+print(repeated)  # Output: (1, 2, 3, 1, 2, 3)
+
+print(3 in tuple1)  # Output: True
+----
+
+### Key Points to Remember:
+- **Concatenation** combines tuples: `(1, 2) + (3, 4)` gives `(1, 2, 3, 4)`.
+- **Repetition** allows you to repeat elements: `(1, 2) * 3` gives `(1, 2, 1, 2, 1, 2)`.
+
+=== Tuples vs Lists
+
+The key differences between tuples and lists are:
+
+- **Tuples are immutable**, meaning you cannot modify them after creation, while **lists are mutable**.
+- **Tuples** are typically used for fixed collections of items, such as coordinates or records, where you do not need to modify the collection.
+- **Lists** are used for dynamic collections where the elements can change.
+
+[cols="1,1,2",  options="header", frame=all, grid=all, align=center]
+|===
+| Feature       | Tuple                        | List
+
+| Mutability    | Immutable                    | Mutable
+| Syntax        | `(element1, element2, ...)`  | `[element1, element2, ...]`
+| Use Case      | Fixed collections of items   | Dynamic collections
+|===
+
+=== Key Points to Remember
+
+- Tuples are **immutable**, meaning you cannot change them after creation.
+- They are **ordered**, and their elements can be accessed via indexing.
+- Tuples are useful for **fixed collections** of data.
+- Tuples support **nesting**, which allows you to store tuples inside other tuples.
