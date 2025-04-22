@@ -1,0 +1,3 @@
+
+Hello Python, File Handling with Exceptions
+Writing the failures to failed_logs.txt file when an error occurred.

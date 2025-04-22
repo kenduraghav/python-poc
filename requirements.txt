@@ -1,3 +1,6 @@
 watchdog
 py-notifier
 livereload
+requests
+dotenv
+tenacity
