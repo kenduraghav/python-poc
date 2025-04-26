@@ -40,7 +40,16 @@ You can access specific characters of a string using slicing:
 message = "Python"
 first_char = message[0]  # P
 last_char = message[-1]  # n
+
+text = "Python"
+print(text[0:2])   # 'Py'
+print(text[2:])    # 'thon'
+print(text[:4])    # 'Pyth'
+print(text[-3:])   # 'hon'
 ----
+
+
+
 
 ==== String Length
 The `len()` function returns the length of the string:

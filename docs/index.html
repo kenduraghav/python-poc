@@ -523,6 +523,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_conclusion">11.8. Conclusion</a></li>
 </ul>
 </li>
+<li><a href="#_file_handling_in_python">12. File Handling in Python</a>
+<ul class="sectlevel2">
+<li><a href="#_opening_a_file">12.1. Opening a File</a></li>
+<li><a href="#_reading_from_a_file">12.2. Reading from a File</a></li>
+<li><a href="#_writing_to_a_file">12.3. Writing to a File</a></li>
+<li><a href="#_working_with_json_files">12.4. Working with JSON Files</a></li>
+<li><a href="#_file_and_path_utilities_os_module">12.5. File and Path Utilities (os module)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1271,7 +1280,13 @@ message2 = "Python is fun!"</code></pre>
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">message = "Python"
 first_char = message[0]  # P
-last_char = message[-1]  # n</code></pre>
+last_char = message[-1]  # n
+
+text = "Python"
+print(text[0:2])   # 'Py'
+print(text[2:])    # 'thon'
+print(text[:4])    # 'Pyth'
+print(text[-3:])   # 'hon'</code></pre>
 </div>
 </div>
 </div>
@@ -1452,10 +1467,111 @@ my_dict["name"] = "Alice"</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_file_handling_in_python">12. File Handling in Python</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Python provides built-in functions for reading and writing files. The basic file operations include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Opening a file</p>
+</li>
+<li>
+<p>Reading from a file</p>
+</li>
+<li>
+<p>Writing to a file</p>
+</li>
+<li>
+<p>Closing a file</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can also work with file paths and exceptions to make your file operations more robust.</p>
+</div>
+<div class="sect2">
+<h3 id="_opening_a_file">12.1. Opening a File</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">file = open("filename.txt", "mode")  # modes: "r", "w", "a", "rb", "wb", etc.
+file.close()  # Always close after use</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or use the context manager (<code>with</code>) which auto-closes the file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">with open("filename.txt", "r") as file:
+    data = file.read()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reading_from_a_file">12.2. Reading from a File</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python"># Read entire content
+content = file.read()
+
+# Read all lines into a list
+lines = file.readlines()
+
+# Read a single line
+line = file.readline()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_writing_to_a_file">12.3. Writing to a File</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python"># Overwrites existing file or creates new one
+with open("filename.txt", "w") as file:
+    file.write("Hello, world!\n")
+
+# Appends to the file
+with open("filename.txt", "a") as file:
+    file.write("New line added.\n")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_working_with_json_files">12.4. Working with JSON Files</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import json
+
+# Writing a dictionary to JSON file
+with open("data.json", "w") as file:
+    json.dump({"id": 1, "task": "Go to Gym"}, file)
+
+# Reading JSON data
+with open("data.json", "r") as file:
+    data = json.load(file)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_file_and_path_utilities_os_module">12.5. File and Path Utilities (os module)</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import os
+
+cwd = os.getcwd()  # Get current working directory
+exists = os.path.exists("filename.txt")  # Check if a file exists</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-04-21 18:06:21 +0800
+Last updated 2025-04-22 18:00:16 +0800
 </div>
 </div>
 </body>

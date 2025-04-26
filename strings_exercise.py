@@ -6,7 +6,7 @@ def string_challenge():
     print("Uppercase:", message.upper())
     print("Lowercase:", message.lower())
     print("Replace 'Python' with 'Coding':", message.replace("Python", "Coding"))
-    print("Slice 'Welcome':", message.strip()[0:7])
+    print("Slice 'Welcome1111':", message.strip()[0:10])
     
 string_challenge()
 
