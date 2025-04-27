@@ -1,0 +1,184 @@
+
+== Classes and Objects in Python
+
+In Python, classes are used to define the structure and behavior of objects. Objects are instances of classes, and they are used to encapsulate data and methods that operate on that data.
+
+=== 1. Introduction to Classes and Objects
+A **class** is a blueprint for creating objects. An **object** is an instance of a class.
+
+- A class contains methods (functions) and attributes (variables) that define its behavior and state.
+- An object is created based on the class and is known as an instance.
+
+=== 2. Defining a Class
+You define a class using the `class` keyword followed by the class name. By convention, class names start with an uppercase letter.
+
+Example:
+
+[source,python]
+----
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):
+        print(f"{self.name} says Woof!")
+----
+
+In the example above:
+- `__init__` is a special method called the constructor, which initializes the object's attributes.
+- `self` refers to the instance of the class and is used to access its attributes and methods.
+
+=== 3. Creating Objects
+Once a class is defined, you can create objects (instances) of that class.
+
+Example:
+
+[source,python]
+----
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Max", "Bulldog")
+
+print(dog1.name)  # Output: Buddy
+dog2.bark()       # Output: Max says Woof!
+----
+
+=== 4. Instance and Class Variables
+- **Instance variables** are variables bound to the instance of the class.
+- **Class variables** are variables that are shared across all instances of the class.
+
+Example:
+
+[source,python]
+----
+class Dog:
+    species = "Canis Familiaris"  # Class variable
+
+    def __init__(self, name, breed):
+        self.name = name  # Instance variable
+        self.breed = breed
+
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Max", "Bulldog")
+
+print(dog1.species)  # Output: Canis Familiaris
+print(dog2.species)  # Output: Canis Familiaris
+print(dog1.name)     # Output: Buddy
+----
+
+=== 5. Methods
+Methods are functions that are defined inside a class. They are used to perform operations on the object’s attributes.
+
+Example:
+
+[source,python]
+----
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):
+        print(f"{self.name} says Woof!")
+
+dog = Dog("Buddy", "Golden Retriever")
+dog.bark()  # Output: Buddy says Woof!
+----
+
+### 5.1. The `self` keyword
+- `self` refers to the instance of the class. It allows you to access the attributes and methods of the class inside its methods.
+- It must be included as the first parameter in all instance methods.
+
+=== 6. Inheritance
+Inheritance allows a class to inherit attributes and methods from another class.
+
+- **Base class** (parent class): The class being inherited from.
+- **Derived class** (child class): The class that inherits from the base class.
+
+Example:
+
+[source,python]
+----
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound")
+
+class Dog(Animal):  # Inheriting from Animal
+    def __init__(self, name, breed):
+        super().__init__(name)  # Call the parent class constructor
+        self.breed = breed
+
+    def bark(self):
+        print(f"{self.name} barks")
+
+dog = Dog("Buddy", "Golden Retriever")
+dog.speak()  # Output: Buddy makes a sound
+dog.bark()   # Output: Buddy barks
+----
+
+In this example:
+- `Dog` inherits from `Animal`, meaning it can access the `name` attribute and `speak()` method from `Animal`.
+
+### 6.1. The `super()` Function
+The `super()` function is used to call a method from the parent class. It allows a derived class to call methods from its base class.
+
+=== 7. Method Overriding
+Method overriding allows a child class to provide a specific implementation of a method that is already defined in its base class.
+
+Example:
+
+[source,python]
+----
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def speak(self):
+        print("Dog barks")
+
+animal = Animal()
+dog = Dog()
+
+animal.speak()  # Output: Animal speaks
+dog.speak()     # Output: Dog barks
+----
+
+In this example:
+- The `Dog` class overrides the `speak()` method of the `Animal` class.
+
+=== 8. Encapsulation
+Encapsulation is the concept of restricting access to certain components and hiding the internal details of an object. It is achieved using **private** and **public** access modifiers.
+
+In Python:
+- By convention, attributes and methods with a leading underscore `_` are considered **protected**.
+- Attributes and methods with two leading underscores `__` are considered **private** and are name-mangled.
+
+Example:
+
+[source,python]
+----
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+account = BankAccount(1000)
+account.deposit(500)
+print(account.get_balance())  # Output: 1500
+# print(account.__balance)  # This will raise an error
+----
+
+In this example:
+- The `__balance` attribute is private and cannot be accessed directly from outside the class.
+
+=== 9. Conclusion
+Python classes and objects are fundamental concepts of object-oriented programming. By using classes, you can model real-world entities and organize your code into reusable components. Inheritance, method overriding, and encapsulation further enhance the flexibility and maintainability of your code.

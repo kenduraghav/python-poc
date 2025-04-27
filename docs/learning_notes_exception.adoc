@@ -1,0 +1,211 @@
+
+== Exception Handling
+
+=== Why Exception Handling?
+- Some operations can cause errors (like dividing by zero, wrong inputs, missing files).
+- Instead of crashing, Python can handle errors gracefully using exception handling.
+
+=== Basic Structure
+
+[source,python]
+----
+try:
+    # Code that might cause an exception
+    risky_code()
+except SomeException:
+    # Code that runs if exception happens
+    handle_the_error()
+----
+
+Example:
+
+[source,python]
+----
+try:
+    a = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+----
+
+Output:
+----
+Cannot divide by zero!
+----
+
+=== Multiple Exceptions
+
+Handle different exceptions separately:
+
+[source,python]
+----
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+except ValueError:
+    print("Invalid input! Please enter a number.")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+----
+
+=== else and finally
+
+- `else`: Runs if no exception happened.
+- `finally`: Always runs, whether exception happened or not.
+
+Example:
+
+[source,python]
+----
+try:
+    num = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid number!")
+else:
+    print(f"You entered {num}")
+finally:
+    print("End of program.")
+----
+
+=== Raising Your Own Exceptions
+
+Manually raise an error:
+
+[source,python]
+----
+age = int(input("Enter your age: "))
+
+if age < 0:
+    raise ValueError("Age cannot be negative!")
+----
+
+=== Common Built-in Exceptions
+
+|===
+| Exception | When It Happens | Example
+
+| ZeroDivisionError
+| Division by zero
+| 10 / 0
+
+| ValueError
+| Wrong value type
+| int("abc")
+
+| TypeError
+| Wrong data type for operation
+| 5 + "hello"
+
+| IndexError
+| List index out of range
+| mylist[10]
+
+| KeyError
+| Dict key not found
+| mydict['missing']
+
+| FileNotFoundError
+| File doesn't exist
+| open('nofile.txt')
+
+| AttributeError
+| Missing attribute in object
+| None.upper()
+
+| ImportError
+| Importing a missing module
+| import nonexistent
+
+| IndentationError
+| Bad indentation
+| Incorrectly aligned code
+
+| RuntimeError
+| Generic runtime error
+| Custom cases
+
+| AssertionError
+| Assertion fails
+| assert 2+2 == 5
+|===
+
+=== Java vs Python (High Level Comparison)
+
+|===
+| Java Exception | Python Exception
+
+| IOException
+| FileNotFoundError, OSError
+
+| ClassNotFoundException
+| ImportError
+
+| NullPointerException
+| AttributeError, TypeError
+
+| ArithmeticException
+| ZeroDivisionError
+
+| IllegalArgumentException
+| ValueError, TypeError
+
+| ArrayIndexOutOfBoundsException
+| IndexError
+|===
+
+=== Catching Multiple Exceptions
+
+==== Separate Handling
+
+[source,python]
+----
+try:
+    x = int(input("Enter a number: "))
+    result = 10 / x
+except ValueError:
+    print("Invalid input!")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+----
+
+==== Grouped Handling
+
+[source,python]
+----
+try:
+    x = int(input("Enter a number: "))
+    result = 10 / x
+except (ValueError, ZeroDivisionError):
+    print("Something went wrong with your input!")
+----
+
+==== Catch Any Exception (Generic)
+
+[source,python]
+----
+try:
+    # risky code
+except Exception as e:
+    print(f"An error occurred: {e}")
+----
+
+=== Quick Summary
+
+|===
+| Concept | Meaning
+
+| try
+| Code that might fail
+
+| except
+| What to do if it fails
+
+| else
+| What to do if no error
+
+| finally
+| Always do this (cleanup, closing files, etc.)
+
+| raise
+| Throw your own error
+|===
+

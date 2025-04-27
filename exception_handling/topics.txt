@@ -1,0 +1,83 @@
+    Object-Oriented Programming (OOP) Concepts
+
+        Classes and Objects
+
+        Attributes and Methods
+
+        Constructor (__init__)
+
+        Inheritance (child and parent classes)
+
+        Polymorphism (method overriding)
+
+        Encapsulation (private attributes)
+
+        Abstraction (abstract classes and methods)
+
+    Working with External APIs (using requests)
+
+        Making GET requests
+
+        Making POST requests
+
+        Handling responses (status codes, JSON parsing)
+
+        Error handling with APIs
+
+        Authentication (API keys)
+
+        Practical Project: Create a weather app that fetches data from an API.
+
+    Regular Expressions (re module)
+
+        Basic pattern matching
+
+        Meta-characters (., ^, $, *, +, ?, etc.)
+
+        search(), match(), findall()
+
+        Replacing patterns with re.sub()
+
+        Grouping and capturing
+
+        Practical Project: Build a contact form validator using regular expressions.
+
+    Useful Built-In Functions and Libraries
+
+        map(), filter(), and reduce()
+
+        lambda functions
+
+        itertools and functools
+
+        os, sys, shutil (for file and system operations)
+
+        collections module (e.g., defaultdict, namedtuple, Counter)
+
+        datetime module
+
+        math module
+
+    Project: Command-line Utilities or Tools
+
+        Simple command-line tools such as:
+
+            File organizer (organize files based on type)
+
+            Password generator
+
+            Directory size calculator
+
+            File renamer based on a pattern
+
+    More Mini Projects
+
+        Expense Tracker (using CSV or JSON for storage)
+
+        To-Do List App (using JSON)
+
+        File Organizer (based on file extensions)
+
+        Weather App (with external API)
+
+        Text File Analyzer (word count, frequency analysis)

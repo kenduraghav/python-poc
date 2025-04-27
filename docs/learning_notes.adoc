@@ -25,6 +25,8 @@ print("Hello,", name)
 print(f"You are {age} years old")
 ----
 
+include::learning_notes_operators.adoc[]
+
 == ⚖️ Control Statements: `if`, `for`, `while`, `break`, `continue`
 
 === if-else

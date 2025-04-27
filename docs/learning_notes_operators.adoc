@@ -1,0 +1,157 @@
+
+== Operators in Python
+
+Python provides various types of operators for performing different operations.
+
+=== 1. Arithmetic Operators
+These operators are used to perform mathematical operations.
+
+* `+` : Addition
+* `-` : Subtraction
+* `*` : Multiplication
+* `/` : Division
+* `//` : Floor Division
+* `%` : Modulus
+* `**` : Exponentiation
+
+Example:
+
+[source,python]
+----
+a = 10
+b = 3
+print(a + b)   # Output: 13
+print(a - b)   # Output: 7
+print(a * b)   # Output: 30
+print(a / b)   # Output: 3.3333333333333335
+print(a // b)  # Output: 3
+print(a % b)   # Output: 1
+print(a ** b)  # Output: 1000
+----
+
+=== 2. Comparison Operators
+These operators compare values and return `True` or `False`.
+
+* `==` : Equal to
+* `!=` : Not equal to
+* `>`  : Greater than
+* `<`  : Less than
+* `>=` : Greater than or equal to
+* `<=` : Less than or equal to
+
+Example:
+
+[source,python]
+----
+x = 5
+y = 10
+print(x == y)  # Output: False
+print(x != y)  # Output: True
+print(x > y)   # Output: False
+print(x < y)   # Output: True
+print(x >= y)  # Output: False
+print(x <= y)  # Output: True
+----
+
+=== 3. Logical Operators
+These operators are used to combine conditional statements.
+
+* `and` : Returns `True` if both conditions are true.
+* `or`  : Returns `True` if at least one condition is true.
+* `not` : Returns `True` if the condition is false.
+
+Example:
+
+[source,python]
+----
+a = True
+b = False
+print(a and b)  # Output: False
+print(a or b)   # Output: True
+print(not a)    # Output: False
+----
+
+=== 4. Assignment Operators
+These operators are used to assign values to variables.
+
+* `=`   : Simple assignment
+* `+=`  : Add and assign
+* `-=`  : Subtract and assign
+* `*=`  : Multiply and assign
+* `/=`  : Divide and assign
+* `//=` : Floor divide and assign
+* `**=` : Exponentiate and assign
+* `%=`  : Modulus and assign
+
+Example:
+
+[source,python]
+----
+a = 5
+b = 3
+a += b  # a = a + b, Output: 8
+a -= b  # a = a - b, Output: 5
+a *= b  # a = a * b, Output: 15
+a /= b  # a = a / b, Output: 5.0
+a //= b # a = a // b, Output: 1
+a **= b # a = a ** b, Output: 125
+a %= b  # a = a % b, Output: 2
+----
+
+=== 5. Bitwise Operators
+These operators perform bit-level operations.
+
+* `&`  : AND
+* `|`  : OR
+* `^`  : XOR
+* `~`  : NOT
+* `<<` : Left shift
+* `>>` : Right shift
+
+Example:
+
+[source,python]
+----
+a = 5  # 0101 in binary
+b = 3  # 0011 in binary
+print(a & b)  # Output: 1
+print(a | b)  # Output: 7
+print(a ^ b)  # Output: 6
+print(~a)     # Output: -6
+print(a << 1) # Output: 10
+print(a >> 1) # Output: 2
+----
+
+=== 6. Membership Operators
+These operators check if a value exists in a sequence (like a list, tuple, or string).
+
+* `in`     : Returns `True` if the value is in the sequence.
+* `not in` : Returns `True` if the value is not in the sequence.
+
+Example:
+
+[source,python]
+----
+list1 = [1, 2, 3, 4, 5]
+print(3 in list1)    # Output: True
+print(10 not in list1) # Output: True
+----
+
+=== 7. Identity Operators
+These operators compare the memory locations of two objects.
+
+* `is`    : Returns `True` if both variables point to the same object.
+* `is not`: Returns `True` if both variables do not point to the same object.
+
+Example:
+
+[source,python]
+----
+a = [1, 2, 3]
+b = a
+print(a is b)   # Output: True
+print(a is not b) # Output: False
+----
+
+=== Conclusion
+Python supports a variety of operators to help perform arithmetic, logical, comparison, and bitwise operations, making it a versatile and easy-to-use language for programming.
